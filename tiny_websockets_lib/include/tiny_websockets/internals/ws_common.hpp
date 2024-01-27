@@ -33,7 +33,7 @@ namespace websockets {
         #define WSDefaultSecuredTcpClient websockets::network::OpenSSLSecureTcpClient<WSDefaultTcpClient>
     #endif //_WS_CONFIG_NO_SSL
 
-#elif defined(__linux__)
+#elif defined(__linux__) || defined(__APPLE__)
     #include <tiny_websockets/network/linux/linux_tcp_client.hpp>
     #include <tiny_websockets/network/linux/linux_tcp_server.hpp>
     #define WSDefaultTcpClient websockets::network::LinuxTcpClient
